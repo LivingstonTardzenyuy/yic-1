@@ -28,6 +28,45 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    /* Style the popup */
+    .popup {
+        display: none; /* Hide by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 20%;
+        right: 20%;
+        top: 1px;
+        width: 80%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        float:right;
+        /* background-color: rgba(7, 67, 99, 0.5); Black  opacity; */
+    }
+    /* Style the popup content */
+    .popup-content {
+        background-color: rgb(150, 132, 33);
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    /* Style the close button */
+    .popup-close {
+        color: green;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .popup-close:hover,
+    .popup-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
 </head>
 
 <body>
@@ -36,19 +75,23 @@
 <header id="" class="" style="background-color: grey;">
   <div class="container d-flex align-items-center">
     
-    <h1 class="logo me-auto"><a href="index.html">Logo</a></h1>
-    <h5 style="color:white;" class="logo me-auto ">Sylvie Tamenda</h5>
+    <img class="logo me-auto" style="border-radius: 15px;"  src="assets/img/logo.jpg" height="60px;" width="90px;" />
+    <h5 style="color:white; color:white; font-size: xx-large;" class="logo me-auto ">Sylvie Tamenda</h5>
   <details>
       <summary style="margin-top: 0px;">
         <img src="assets/img/menu_icon.png"/>
       </summary>
-      <ul style="height: 200px; width: 200px; padding-left: -1px; padding-right: 20px;">
-        <div class="container mt-5">
-        <div class="row">
-            <li><a href="podcast.html">PodCast</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="events.html">Events</a></li>
+      <ul style="height: 200px; width: 160px; padding-left: -1px; padding-right: 20px;">
+        <div style="color:green;" class="container">
+        <div class="row" >
+          <li><a style="color:green;" href="index.html">Home</a></li>
+          <li><a style="color:green;" href="about.html">About Me</a></li>
+          <li><a style="color:green;" href="blog.html">Blog</a></li>
+            <li><a style="color:green;" href="podcast.html">PodCast</a></li>
+            <li><a style="color:green;" href="youtube.com">Youtube</a></li>
+            <li><a style="color:green;" href="courses.com">Courses</a></li>
+            <li><a style="color:green;" href="products.html">Products</a></li>
+            <li><a style="color:green;" href="events.html">Events</a></li>
           </div>
         </div>
       </ul>
@@ -58,19 +101,49 @@
 
 <!-- End Header -->
 
+
+<center>
+<div class="popup" id="welcome-popup">
+  <div class="popup-content">
+      <span class="popup-close">&times;</span>
+      <h2 style="color:white;">Welcome to my website!</h2>
+      <p style="color:white;">Thank you for visiting my website. We hope you find what you're looking for.</p>
+      <p style="color:white;">Get a free ebook today</p>
+    </div>
+  </div>
+</center>
+
+<script>
+  // Get the popup
+  var popup = document.getElementById("welcome-popup");
+  
+  // Get the close button
+  var closeButton = document.getElementsByClassName("popup-close")[0];
+  
+  // When the window is loaded, display the popup
+  window.onload = function() {
+      popup.style.display = "block";
+  }
+  
+  // When the user clicks on the close button, hide the popup
+  closeButton.onclick = function() {
+      popup.style.display = "none";
+  }
+</script>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
   <div class="container">
     <div class="row gy-4 d-flex justify-content-between">
-      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center mt-5" style="color:rgb(139, 51, 51);">
-        <h5>Heya, it's my plum pleasing to meet you!</h5>
+      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center mt-5" style="color:rgb(32, 43, 2);">
+        <b><h5>Heya, it's my plum pleasing to meet you!</h5></b>
         <br>
-        <p id="text">
-         I &nbsp; am  &nbsp; sylvie  &nbsp; Tamanda  &nbsp; a  &nbsp; business  &nbsp; coach,  &nbsp; <br> Entrepreneur,&nbsp;Author,&nbsp; Youtuber,&nbsp;Educator,&nbsp;<br> Mother,&nbsp; Sister,&nbsp; a&nbsp; serial&nbsp; personal&nbsp; developer&nbsp; and <br>&nbsp; <br> the&nbsp; most&nbsp; resilient&nbsp; human&nbsp; being&nbsp; you'll&nbsp; ever <br>&nbsp; come&nbsp; across</h5>
+        <p id="text" style="font-size: 16px;">
+        <b> I &nbsp; am  &nbsp; sylvie  &nbsp; Tamanda  &nbsp; a  &nbsp; business  &nbsp; coach,  &nbsp; <br> Entrepreneur,&nbsp;Author,&nbsp; Youtuber,&nbsp;Educator,&nbsp;<br> Mother,&nbsp; Sister,&nbsp; a&nbsp; serial&nbsp; personal&nbsp; developer&nbsp; and <br>&nbsp; <br> the&nbsp; most&nbsp; resilient&nbsp; human&nbsp; being&nbsp; you'll&nbsp; ever <br>&nbsp; come&nbsp; across</h5></b>
          
-         <br>I'm&nbsp; so&nbsp; glad&nbsp; you&nbsp; came&nbsp; across&nbsp; me&nbsp; </h5>
+         <b><br>I'm&nbsp; so&nbsp; glad&nbsp; you&nbsp; came&nbsp; across&nbsp; me&nbsp; </h5></b>
          <br>
-            Now&nbsp; let's&nbsp; get&nbsp; cracking&nbsp;</h5> 
+            <b>Now&nbsp; let's&nbsp; get&nbsp; cracking&nbsp;</h5> </b>
         </p>
 
         <script>
@@ -85,7 +158,7 @@
           });
 
         </script>
-        <a href="#about" class="btn-get-started scrollto">Join Community</a>
+        <a href="#about" style="background-color: gold; border-radius: 20px;" class="btn-get-started scrollto" style="color:green;">Join my Community</a>
       </div>
       
       <div class="col-lg-5 order-1 order-lg-2 hero-img float-right" data-aos="zoom-out">
@@ -100,7 +173,13 @@
   <main id="main">
     <!-- ======= About Section ======= -->
     <div class="container d-flex justify-content-center mt-5 font-weight-bold" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-      “The  SECRET INGREDIENT to finding balance as an independent woman <br> is taking responsibility for your LIFE'S OBJECTIVES and steering <br> them in the right direction without SEEKING PERMISSION  from anyone”
+      <b>
+        <center>
+
+          “The  SECRET INGREDIENT to finding balance as an independent woman <br> is taking responsibility for your LIFE'S OBJECTIVES and steering <br> them in the right direction without SEEKING PERMISSION  from anyone”
+        </center>
+
+      </b>
     </div>
 
     <!-- ======= Services Section ======= -->
@@ -111,7 +190,7 @@
         <div class="" data-aos="fade-up" data-aos-delay="100">
           
           <h4><a href="#">
-            <b style="font-size: xx-large; color:red;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large;" href="blog.html">    View all</a></h4>
+            <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;;" href="blog.html">    View all</a></h4>
           <p style="margin-left: 90px; font-size: 50px;" class="">Blog</p>
         </div>
       </div>
@@ -134,7 +213,7 @@
           <div class="" data-aos="fade-up" data-aos-delay="100">
             
             <h4><a href="#">
-              <b style="font-size: xx-large;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large;" href="products.html">    View all</a></h4>
+              <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="products.html">    View all</a></h4>
             <p style="margin-left: 90px; font-size: 50px;" class="">Products</p>
           </div>
         </div>
@@ -150,7 +229,7 @@
         <div class="" data-aos="fade-up" data-aos-delay="100">
           
           <h4><a href="#">
-            <b style="font-size: xx-large;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large;" href="podcast.html">    View all</a></h4>
+            <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="#">    View all</a></h4>
           <p style="margin-left: 40px; font-size: 50px;" class="">PodCast</p>
         </div>
       </div>
@@ -172,7 +251,7 @@
         <div class="" data-aos="fade-up" data-aos-delay="100">
           
           <h4><a href="#">
-            <b style="font-size: xx-large;">UPCOMING/PAST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large;" href="events.html">    View all</a></h4>
+            <b style="font-size: xx-large; color:green;">UPCOMING/PAST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="#">    View all</a></h4>
           <p style="margin-left: 90px; font-size: 50px;" class="">Events</p>
         </div>
       </div>
@@ -183,85 +262,65 @@
 
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
-  <div class="container">
-    <div class="slides-1 swiper" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Testimonials</h2>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est velit perferendis modi soluta officiis labore? Atque et aliquam ab iusto aperiam magnam. Inventore ipsam aspernatur necessitatibus veritatis quaerat in cum.
+    </div>
+
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
+
         <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-            <h3 style="color: white;">Bissing Goodness</h3>
-            <!-- <h4 style="color">Ceo &amp; Founder</h4> -->
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <h3>Saul Goodman</h3>
+              <h4>Ceo &amp; Founder</h4>
+              <p style="color:white;">
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum obcaecati molestias, asperiores adipisci ipsum, odio voluptates ipsam totam hic facere non incidunt ratione nobis eius quas cumque doloribus minus.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
             </div>
-            <p style="color:white;">
-              <i class="bi bi-quote quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
           </div>
         </div><!-- End testimonial item -->
+
         <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Sara Wilsson</h3>
+              <h4>Designer</h4>
+              <p style="color:white;">
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore fugiat omnis facilis placeat fugit reiciendis assumenda necessitatibus iusto, quidem aliquid et fuga praesentium officia? Enim eveniet numquam voluptatem eligendi excepturi?
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
             </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
           </div>
         </div><!-- End testimonial item -->
+
         <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="assets/img/hero-bg.jpeg" class="testimonial-img" alt="">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+              <p style="color:white;">
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem placeat, nobis ad totam aliquam magni sunt nesciunt pariatur, esse at, reiciendis veritatis! Iusto, tenetur magni. Suscipit eligendi dolorum unde.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
             </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
+          </div>
           </div>
         </div><!-- End testimonial item -->
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
-          </div>
-        </div><!-- End testimonial item -->
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
-          </div>
-        </div><!-- End testimonial item -->
-      </div>
+
+
+
+
+     
       <div class="swiper-pagination"></div>
     </div>
   </div>
@@ -279,19 +338,11 @@
 
       <div class="me-md-auto text-center text-md-start">
         
-        <div class="social-links text-center text-md-end">
-          
-          
-          
-          
-          
-          
-          
-          
+        <div class="social-links text-center text-md-end">      
           
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100090500613162" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/tickettofreedompodcast?igshid=ZDdkNTZiNTM=" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
@@ -304,7 +355,7 @@
           
           <form action="" method="post">
             <input type="email" name="email">
-            <input class="btn btn-danger" type="submit" value="Subscribe">
+            <input class="btn btn-danger" style="background-color: gold;" type="submit" value="Subscribe">
           </form>
           <br>
         </div>
@@ -313,7 +364,7 @@
     </div>
     <center>
       <div class="credits align-center" style="font-size: 20px;">
-        Powered by <a href="">ZILO</a>
+        Powered by <a style="color:gold;" href="">Zilo</a>
       </div>
     </center>
     
